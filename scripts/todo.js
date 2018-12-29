@@ -9,5 +9,9 @@
 'use strict';
 const todo = require('todo');
 module.exports=(robot) => {
-
+    robot.respond(/todo (.+)/i, (msg) => {
+        const task = msg.match[1].trim();
+        todo.todo(task);
+        msg.send('追加しました: '+task);
+    });
 };

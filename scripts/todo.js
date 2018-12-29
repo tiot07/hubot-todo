@@ -19,7 +19,7 @@ module.exports=(robot) => {
         todo.done(task);
         msg.send('完了にしました: '+task);
     });
-    robot.respond(/done (.+)/i,(msg) => {
+    robot.respond(/del (.+)/i,(msg) => {
         const task = msg.match[1].trim();
         todo.del(task);
         msg.send('削除しました: '+task);
